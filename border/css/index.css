@@ -1,0 +1,201 @@
+.box {
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+    overflow: hidden;
+}
+/* 画圆 */
+.dotted {
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: 149px dotted blue;
+}
+
+.content1 {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    text-align: center;
+    color: red;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 边框颜色跟随color */
+.box2 {
+    border: 3px solid;
+    color: brown; 
+}
+/* 三等分 */
+.double {
+    width: 120px;
+    height: 20px;
+    border-top: 60px double blueviolet;
+    border-bottom: 20px solid blueviolet;
+}
+
+.box3 {
+    border: 1px solid;
+    color: #ccc;
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+/* 实现border颜色一致性的问题 */
+.box3:hover{
+    color: blue;
+}
+
+.box3::before {
+    content: "";
+    border-top: 20px solid;
+    width: 100px;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.box3::after {
+    content: "";
+    width: 0;
+    height: 100px;
+    border-left: 20px solid;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+/* .heng {
+    width: 100px;
+    height: 20px;
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.shu {
+    width: 20px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+} */
+
+/* background-position的用法 
+    百分比不计算border区域的
+*/
+.box4 {
+    width: 400px;
+    height: 200px;
+    border: 1px solid blue;
+}
+
+.box4 .bg {
+    width: 180px;
+    height: 200px;
+    background: url(../images/demo5.png);
+    background-repeat: no-repeat;
+    float: right;
+    /* 距离右边的宽度增加border的宽度 */
+    border-right: 50px solid transparent;
+    /* 靠右边固定 */
+    background-position: 100% 50px;
+    
+}
+
+/* 三角形 */
+.box5 .triangle {
+    width: 0;
+    height: 0;
+    border-width: 20px 100px;
+    border-style: solid;
+    border-color: transparent transparent red transparent;
+}
+
+/* 消息框的三角实现 */
+.box6 {
+    width: 200px;
+}
+.box6 .content {
+    color: white;
+    background: blue;
+    border-radius: 5px;
+    line-height: 40px;
+    padding: 5px;
+}
+.box6 .triangle {
+    width: 0;
+    height: 0;
+    border-width: 10px 10px;
+    border-style: solid;
+    border-color: blue blue transparent transparent;
+    margin-left: 80%;
+}
+
+/* 梯形实现圆角 */
+.box7 {
+    width: 200px;
+}
+.box7 .ladder {
+    width: 190px;
+    height: 5px;
+    border: 5px solid;
+}
+.box7 .l-top {
+    border-color: transparent transparent  blue transparent;
+}
+.box7 .content {
+    color: white;
+    background: blue;
+    line-height: 40px;
+    padding: 5px;
+}
+.box7 .l-bottom {
+    border-color: blue transparent transparent transparent;
+}
+
+/* 实现checkbox，使用透明边框增加点击区域 */
+.checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    box-shadow: inset 0 1px, inset 1px 0, inset 0 -1px, inset -1px 0;
+    background-color: #FFF;
+    background-clip: content-box;
+    color: #d0d0d5;
+}
+
+.icon {
+    filter: drop-shadow(40px 0 red);
+}
+
+.box9 {
+    border-left: 300px solid #222;
+    height: 30px;
+}
+.box9 .left {
+    float: left;
+    width: 300px;
+    margin-left: -300px;
+}
+.box9 .module {
+    float: left;
+}

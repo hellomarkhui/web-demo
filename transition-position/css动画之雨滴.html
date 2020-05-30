@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximun-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/css动画之雨滴.css">
+        <title>css动画之雨滴</title>
+    </head>
+    <body>
+        <div class="content">
+            <div class="yudi"></div>
+        </div>
+    </body>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        let $content = $(".content");
+        let initNumber = 0;
+        for(let i = 0; i < 30; i++){
+            let lefts = Math.floor(Math.random()*5+2);
+            let delay = Math.floor(Math.random()*50+2);
+            initNumber += lefts;
+            let $div = $("<div/>").addClass("yudi").css({
+                "left": initNumber+'%'
+                ,"top": lefts+'%'
+                ,"animation-delay": delay/10+"s"
+            });
+            $content.append($div);
+        }
+    </script>
+</html>

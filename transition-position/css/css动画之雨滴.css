@@ -1,0 +1,41 @@
+body, html {
+    width: 100%;
+}
+.content {
+    position: relative;
+    height: 100%;
+    background: #f2f2f2;
+    overflow: hidden;
+}
+
+.yudi {
+    position: absolute;
+    opacity: 0;
+    /*
+    width: 4px;
+    height: 6px;
+    background: #ccc;
+    clip-path: ellipse(10% 30% at 50% 50%);
+    */
+    animation: drop 1.2s cubic-bezier(0.53,-0.04, 0.33, 0.76) infinite;
+    width: 60px;
+    height: 60px;
+    background: url(../img/hongbao.jpg) no-repeat;
+    background-size: auto 60px;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(20px, 100vh, -10px)
+    }
+}

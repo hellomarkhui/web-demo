@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>球体练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        .content {
+            border: 1px solid green;
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        .mybox {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -50px;
+            animation: jump 1s cubic-bezier(0.41, -0.04, 0.93, 0.29) infinite alternate;
+        }
+        @keyframes jump {
+            0% {
+                -webkit-transform: translateY(0px);
+            }
+            90% {
+                -webkit-transform: translateY(150px);
+                clip-path: ellipse(50% 50% at 50% 50%);
+            }
+            100% {
+                -webkit-transform: translateY(150px);
+                clip-path: ellipse(50% 45% at 50% 48%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="mybox">
+
+        </div>
+    </div>
+</body>
+</html>

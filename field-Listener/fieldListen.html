@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Conten-Type" content="text/html;charset=utf-8" />
+	<title>字段监控实例</title>
+</head>
+<body id="myBody">
+	<input type="text" id="id1">
+	<div></div>
+	<input type="text" id="id2">
+
+</body>
+<script src="jquery-1.11.3/jquery.min.js"></script>
+<script>
+
+var a = {
+	options: {}
+	,addOption: function(field,fun){
+		var _h = this;
+		if(!_h.init)
+			_h.init = window.setInterval(function(){
+				_h.optionFun();
+			}, 100);
+		if(typeof this.options[field] == "undefined")
+			this.options[field] = {};
+		if(typeof this.options[field].funs == "undefined")
+			this.options[field].funs = [];
+		this.options[field].funs.push(fun);
+		this.options[field].field = field;
+		this.options[field].oldV = undefined;
+	}
+	,init: undefined
+	,optionFun: function(){
+			var _h = this;
+			var os = _h.options;
+			for(var option in os){
+				var o = os[option];
+				var value = $("#"+o.field).val();
+				if( value != o.oldV ){
+					o.newV = value;
+					for(var i = 0; i < o.funs.length; i++){
+						o.funs[i]({oldv: o.oldV, newv: value, field: o.field});
+					}
+					o.oldV = $("#"+o.field).val();
+				}
+			}
+	}
+}
+
+$(document).ready(function(p){
+	a.addOption("id1", function(e){
+		try{
+			var n = parseFloat(e.newv);
+			if(n > 10){
+				alert("这个框不能输入大于10的数字");
+				$("#"+e.field).val("");
+			}
+		}catch(e){
+			
+		}
+	});
+	a.addOption("id2", function(e){
+		try{
+			var n = parseFloat(e.newv);
+			if(n < 20){
+				alert("这个框要输入大于等于20的数字");
+				$("#"+e.field).val("");
+			}
+		}catch(e){
+			
+		}
+	});
+});
+
+</script>
+</html>

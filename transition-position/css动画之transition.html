@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>transition练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            transition: width 2s;
+        }
+        .content:hover {
+            background-color: blue;
+            width: 400px;
+        }
+        .mycontent {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transition: transform 2s ease-out;
+        }
+        .mycontent:hover {
+            background-color: blue;
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+    </div>
+    <div class="mycontent">
+
+    </div>
+</body>
+</html>

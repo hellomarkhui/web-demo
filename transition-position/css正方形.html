@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<style>
+div.parent
+{
+    width:288px;
+    height: 400px;
+    background-color:yellow;
+}
+.child{
+    width:50%;
+    padding-bottom:50%;
+    height:0;
+    background-color:#ccc;
+}
+.mydiv {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+.flex-left {
+    float: left;
+    width: 100px;
+    height: 40px;
+    border: 1px solid red;
+}
+.flex-right {
+    float: right;
+    width: 100px;
+    height: 40px;
+    border: 1px solid green;
+}
+.mydiv input {
+    width: 100%;
+}
+</style>
+</head>
+<body>
+    <div class='parent'>
+        <div class='child'></div>
+    </div>
+    <div class="mydiv">
+        <div class="flex-left"></div>
+        <input type="text" />
+        <div class="flex-right"></div>
+    </div>
+    <div class="float-div">
+        <>
+    </div>
+    
+</body>
+</html>

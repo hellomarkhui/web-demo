@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximun-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/css动画之跑马灯.css">
+        <title>css动画之跑马灯</title>
+    </head>
+    <body>
+        <div class="mymarquee">
+            <marquee behavior="" direction="">
+                我要好好努力，这样才能实现自己的梦想，过上理想的生活，获得快乐与幸福
+            </marquee>
+        </div>
+        <div class="marquee">
+            <div class="content">
+                <div class="list"><img src="img/paomd/image1.png" alt=""></div>
+                <div class="list"><img src="img/paomd/image2.png" alt=""></div>
+                <div class="list"><img src="img/paomd/image3.png" alt=""></div>
+                <div class="list"><img src="img/paomd/image4.png" alt=""></div>
+            </div>
+        </div>
+    </body>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(() => {
+            console.log("页面加载完之后执行此操作");
+            var $marquee = $(".marquee");
+            var $content = $marquee.find(".content");
+            var $lists = $content.find(".list");
+            var outerWidth = 600,
+                outerHeight = 400;
+            var listLength = $lists.length;
+            var contentWidth = outerWidth * listLength;
+            //var style = document.styleSheets;
+            var speed = 6;
+            $marquee.css({
+                "width": outerWidth+"px"
+                ,"height": outerHeight+"px"
+                ,"margin": "auto"
+            });
+            $lists.css({
+                "width": outerWidth+"px"
+                ,"height": outerHeight+"px"
+            });
+            $content.css({
+                "width": contentWidth+"px"
+                ,"height": outerHeight+"px"
+                ,"animation": "run "+speed+"s linear infinite"
+            });
+           // alert(style[0]);
+           /*
+            style[0].insertRule('@keyframes run { '+
+                '100% { ' +
+                    'transform: translateX(-'+outerWidth+'px); ' +
+                '} ' +
+                '}');
+            */
+            var myStyle = document.createElement("style");
+            myStyle.appendChild(document.createTextNode('@keyframes run { '+
+                '100% { ' +
+                    'transform: translateX(-'+contentWidth+'px); ' +
+                '} ' +
+                '}'));
+            document.head.appendChild(myStyle);
+            var clone = $lists.eq(0).clone();
+            $content.append(clone);
+        });
+    </script>
+</html>

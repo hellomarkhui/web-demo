@@ -1,0 +1,18 @@
+.mymarquee {
+    width: 500px;
+    overflow: hidden;
+    margin: 30px auto;
+}
+.marquee {
+    overflow: hidden; 
+}
+.content {
+    display: flex;
+}
+.list {
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.list img {
+    width: 100%;
+}
