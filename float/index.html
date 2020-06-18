@@ -1,0 +1,122 @@
+<!DOCType html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>float浮动的学习</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/index.css">
+        <style>
+            .test {
+                width: 200px;
+                height: 200px;
+                border: 1px solid blue;
+            }
+            .test-left {
+                float: left;
+                width: 100px;
+                height: 50px;
+                background: red;
+            }
+            .test2 {
+                position: relative; 
+                width: 400px;
+                height: 200px;
+                border: 1px solid blue;
+            }
+            .my-right {
+                width: 100px;
+                height: 100%;
+                float: left;
+                margin-left: -100px;
+                background: green;
+            }
+            .my-left {
+                /* 只有被absolute元素才不会挤开float元素 */
+                float: left;
+                /* absolute元素，只有父元素设置position，width才会按照父元素百分比 */
+                width: 100%;
+                height: 16px;
+            }
+            .my-left-child {
+
+                /* absolute元素，只有父元素设置position，width才会按照父元素百分比 */
+                height: 16px;
+                margin: 30px 150px 0 40px;
+                border: 1px solid red;
+                /* 文字超出隐藏。。。 */
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .test3 {
+                margin: 50px;
+                width: 50px;
+                height: 100px;
+                float: left;
+                border: 1px solid rebeccapurple;            
+            }
+            .box-big {
+                width: 400px;
+                height: 200px;
+                border: 1px solid blue;
+            }
+            .box-middle {
+                width: 100px;
+                height: 50px;
+                border: 1px solid red;
+            }
+            .box-small {
+                width: 50px;
+                height: 25px;
+                border: 1px solid yellow;
+            }
+            .test4 {
+                text-align: center;
+            }
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
+            .test5 {
+                margin-left: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="test clearfloat">
+            <div class="test-left">
+                测试文字环绕效果
+            </div>
+            <div>测试实施测试赛测试室测试实施测试赛测试室测试实施测试赛测试室测试实施测试赛测试室</div>
+        </div>
+        <div class="test2 clearfloat">
+            <div class="my-left">
+            <div class="my-left-child">
+                <span>1、</span>
+                <span>222222</span>
+                测试文字超出隐藏，float难用，元素需要固定尺寸
+            </div></div>
+            <div class="my-right"></div>
+        </div>
+        <div class="test2 clearfloat">
+            <div class="test3">
+                浮动margin padding是可以生效的
+            </div>
+            <div class="test3"></div>
+        </div>
+        <div class="test4 box-big">
+            
+            <div class="box-small left"></div>
+            测试左右浮动，中间文字效果
+            <div class="box-small right"></div>
+        </div>
+        <div class="box-big clearfloat">
+            <div class="box-middle left"></div>
+            <div class="test5">测试实施测试赛测试室测试实施测试赛测试室测试实施测试赛测试室测试实施测试赛测试室</div>
+        </div>
+    </body>
+</html>
