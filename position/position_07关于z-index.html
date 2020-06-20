@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>z-index基础</title>
+    <style>
+
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: relative;
+            z-index: 5;
+        }
+        .pre {
+            width: 200px;
+            height: 200px;
+            background: green;
+            position: relative;
+            z-index: 6;
+            top: -50px;
+        }
+        .test {
+            width: 100px;
+            height: 100px;
+            background: #FFF;
+            position: relative;
+            z-index: 1;
+        }
+        /* z-index 所有有定位属性的元素都有层级关系
+            1、可以设置元素的叠加顺序，但依赖定位属性
+            2、z-index大的元素会覆盖z-index小的元素
+            3、z-index为auto的元素不参与层级比较
+            4、z-index值为负值，元素被普通流中的元素覆盖
+             */
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="pre">
+        <div class="test"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>侧边栏导航跟随案例</title>
+    <style>
+        /* 这是我看了视频之后自己写的css样式层级和布局，有点多，也有点乱 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        .con {
+            width: 100%;
+            height: 4000px;
+            background: url(../img/position/muke.png) center top no-repeat;
+        }
+        .nav {
+            width: 160px;
+            position: fixed;
+            left: 0;
+            top: 100px;
+            /*bottom: 0;
+            right: 0;
+            margin: auto auto auto 0; */
+            background: #ccc;
+        }
+        .nav-li {
+            border: 1px solid black;
+            background: grey;
+            width: 160px;
+        }
+        .ul-li {
+            border: 1px solid black;
+            background: gainsboro;
+            width: 160px;
+            display: none;
+            position: relative;
+        }
+        .nav-li:hover .ul-li {
+            display: block;
+            cursor: pointer;
+        }
+        .ul2 {
+            width: 160px;
+            position: absolute;
+            left: 160px;
+            display: none;
+            top: 0;
+        }
+        .ul2 div {
+            width: 100%;
+            background: wheat;
+            border: 1px solid black;
+        }
+        .ul-li:hover .ul2 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="con"></div>
+    <div class="nav">
+        <div class="nav-li">
+            <div>导航栏一</div>
+            <ul>
+                <li class="ul-li">
+                    二级导航
+                    <div class="ul2">
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                    </div>
+                </li>
+                <li class="ul-li">
+                    二级导航
+                    <div class="ul2">
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                    </div>
+                </li>
+                <li class="ul-li">
+                    二级导航
+                    <div class="ul2">
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                    </div>
+                </li>
+                <li class="ul-li">
+                    二级导航
+                    <div class="ul2">
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                        <div>三级导航</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-li">
+            <div>导航栏二</div>
+            <ul>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+            </ul>
+        </div>
+        <div class="nav-li">
+            <div>导航栏三</div>
+            <ul>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+            </ul>
+        </div>
+        <div class="nav-li">
+            <div>导航栏四</div>
+            <ul>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+                <li class="ul-li">二级导航</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
