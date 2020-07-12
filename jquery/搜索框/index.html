@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery实现搜索框</title>
+	<style>
+		body {
+			background: #DDF3F7;
+		}
+		#app {
+			width: 400px;
+			height: 200px;
+			background: #fff;
+			margin: auto;
+			padding:20px;
+		}
+		#app input, #app button {
+			height: 30px;
+			display: inline-block;
+			vertical-align: top;
+			box-sizing: border-box;
+		}
+		#app input {
+			padding: 0;
+			border: 1px solid black;
+		}
+		#app ul {
+			list-style: none;
+			padding: 0;
+		}
+		#app ul li {
+			min-width: 200px;
+		}
+		#app ul li:hover {
+			cursor: pointer;
+			background: #DDF3F7;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<input id="inputValue" type="text" />
+		<button >确定</button>
+		<ul>
+		</ul>
+	</div>
+	<script src="../jquery.min.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
